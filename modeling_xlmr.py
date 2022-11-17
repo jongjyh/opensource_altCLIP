@@ -1,13 +1,13 @@
-from transformers import BertPreTrainedModel
 import torch.nn as nn
 import torch
 from transformers.models.xlm_roberta.modeling_xlm_roberta import XLMRobertaModel
+from transformers.models.roberta.modeling_roberta import RobertaPreTrainedModel
 from transformers.activations import ACT2FN
 from typing import Optional
 from .configuration_altclip import RobertaSeriesConfig
 
 
-class RobertaSeriesModelWithTransformation(BertPreTrainedModel):
+class RobertaSeriesModelWithTransformation(RobertaPreTrainedModel):
 
     _keys_to_ignore_on_load_unexpected = [r"pooler"]
     _keys_to_ignore_on_load_missing = [r"position_ids", r"predictions.decoder.bias"]
